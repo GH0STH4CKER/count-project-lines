@@ -5,6 +5,9 @@ total_lines = 0
 def count_lines_in_file(file_path):
     with open(file_path, 'r', encoding='latin-1') as file:
         lines = file.readlines()
+        for l in lines :
+            if l.replace(' ','') == '\n' or l.replace(' ','') == '':
+                lines.pop(lines.index(l)) 
         return len(lines)
 
 def traverse_directory(directory):
